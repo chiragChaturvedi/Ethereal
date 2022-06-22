@@ -6,7 +6,7 @@ Developement started : 22nd june Wednesday 2022 Evening 8:35 PM
 	-- git init, pipenv init
 	-- Project name: Ethereal "meaning - light, heavenly, out of world, 
 	
-		Ether: Refered as 'akasha; in sanskrit, ether is eelement that comes first in yogic and ayurvedic thinking. Ether is without the firmness of earth , 			coolness of water, the heat of fire or even moment of heat."
+		Ether: Referred to as 'akasha' in Sanskrit, Ether is the element that comes first in Yogic and Ayurvedic thinking. Ether is without the firmness of earth, the coolness of water, the heat of fire or even the moment of wind." ~https://www.ekhartyoga.com/articles
 
 	-- Project created
 	-- started app name Blog
