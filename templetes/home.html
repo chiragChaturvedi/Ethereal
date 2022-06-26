@@ -5,17 +5,18 @@ Blogs
 {% endblock %}
 
 {% block content %}
-    <h1>Blogs</h1>
+	<div class = 'container'>
+	    <h1>Blogs</h1>
 
-    <ul>
-        {% for post in object_list %}
-            <li>
-                <a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}<br>
-                {{post.body}}
-            </li>
+	    <ul>
+	        {% for post in object_list %}
+	            <li>
+	                <a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}<br>
+	                {{post.body}}
+	            </li>
 
-        {% endfor %}
-
-
-    </ul>
+	        {% endfor %}
+	    
+	    </ul>
+	</div>
 {% endblock %}

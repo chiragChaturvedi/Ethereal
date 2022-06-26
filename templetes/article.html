@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{post.title}}</h1>
-    <p>{{post.body}}</p>
-    <a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button>
-    </a>    
+	<div class = 'container'>
+	    <h1>{{post.title}}</h1>
+	    <p>{{post.body}}</p>
+	    <a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button>
+	    </a>
+	</div>    
 {% endblock %}

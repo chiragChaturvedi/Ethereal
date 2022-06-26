@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block content %}
-<div class= "form-group">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
+	<div class = 'container'>
+		<div class= "form-group">
+		    <form method="POST" enctype="multipart/form-data">
+		        {% csrf_token %}
 
-        {{ form.as_p }}
-        
-        <input type="submit" value="Submit">
-    </form>
-</div>
+		        {{ form.as_p }}
+		        
+		        <input type="submit" value="Submit">
+		    </form>
+		</div>
+	</div>
 {% endblock %}
