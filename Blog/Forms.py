@@ -1,16 +1,20 @@
-from socket import fromshare
+from random import choices
 from django import forms
-from matplotlib import widgets
-from .models import Post
+from .models import Post, category
+
+choices = category.objects.all().values_list('name', 'name')
+choices_list = [item for item in choices]    
+# choices = [('coding', 'coding'), ('general', 'general'), ('DSA', 'DSA'),]
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'body', 'author')
+        fields = ('title', 'body', 'author', 'category')
 
         widgets = {
-            'Title' : forms.TextInput(attrs={'class': 'form-control'}),
-            'Author' : forms.Select(attrs={'class': 'form-control'}),
-            'Body' : forms.Textarea(attrs={'class': 'form-control'}),
-
+            'title' : forms.TextInput(attrs={'class': 'form-control'}),
+            'body' : forms.Textarea(attrs={'class': 'form-control'}),
+            'author' : forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id':'id_author', "type":"hidden"}),	
+            'category' : forms.Select(choices=choices_list ,attrs={'class': 'form-control'}),
         }
+    

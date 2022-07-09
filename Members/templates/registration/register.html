@@ -1,0 +1,32 @@
+{% extends 'basee.html' %}
+{% block title %}
+	Register
+{% endblock %}
+{% block nav %}
+	{% if user.is_authenticated %}
+		<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="{% url 'add_post' %}">Add Post</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="{% url 'logout' %}">LogOut</a>
+		</li>
+	{% else %}
+		<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+		</li>
+	{% endif %}
+{% endblock %}
+{% block content %}
+	<h1>Welcome...</h1>
+	<div class = 'container'>
+		<div class="form-group">
+			<form method="POST">
+				{% csrf_token %}
+				
+				{{ form.as_p }}
+				
+				<button class = 'btn btn-secondary' type="submit">Register</button>
+				<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button>
+				</div>
+			</div>
+		{% endblock %}

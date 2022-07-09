@@ -1,0 +1,15 @@
+{% extends 'Base.html' %}
+{% block title %}
+	{{post.title}}
+{% endblock %}
+{% block content %}
+	<div class = 'container'>
+		<h1>{{post.title}}</h1>
+		<p>{{post.body|safe}}</p>
+		<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button></a>
+		{% if user.is_authenticated and user.id == post.author.id %}
+			<a href="{% url 'edit' post.pk %}"><BUTTON class="btn btn-secondary">Edit Post</BUTTON></a>
+			<a href="{% url 'delete' post.pk %}"><BUTTON class="btn btn-danger">Delete Post</BUTTON></a>
+		{% endif %}
+	</div>
+{% endblock %}

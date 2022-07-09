@@ -1,0 +1,21 @@
+{% extends 'Base.html' %}
+{% block title %}
+	Delete
+{% endblock %}
+{% block content %}
+	{% if user.is_authenticated and user.id == post.author.id %}
+		<h1>Delete Post...</h1>
+		<strong><h2>Are you sure to delete "{{post.title}}"</h2></strong>
+		<div class = 'container'>
+			<div class="form-group">
+				<form method="POST">
+					{% csrf_token %}
+					
+					<button type="submit" class="btn btn-danger">Delete</button>
+					<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button>
+					</div>
+				</div>
+			{% else %}
+				<h2>You are not allowed here!!! (And you know it....)</h2>
+			{% endif %}
+		{% endblock %}

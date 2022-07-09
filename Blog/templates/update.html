@@ -1,0 +1,23 @@
+{% extends 'Base.html' %}
+{% block title %}
+	Edit
+{% endblock %}
+{% block content %}
+	{% if user.is_authenticated and user.id == post.author.id %}
+		<h1>Update Post...</h1>
+		<div class = 'container'>
+			<div class="form-group">
+				<form method="POST">
+					{% csrf_token %}
+					{{ form.as_p }}
+					{{ form.media }}
+					
+					<button type="submit" class="btn btn-secondary">Update</button>
+					<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button>
+					</div>
+				</div>
+				
+			{% else %}
+				<h2>You are not allowed here!!! (And you know it....)</h2>
+			{% endif %}
+		{% endblock %}
