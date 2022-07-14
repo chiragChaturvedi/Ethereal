@@ -1,0 +1,19 @@
+{% extends 'Base.html' %}
+{% block title %}
+	{{ cat }}
+{% endblock %}
+{% block content %}
+	<div class = 'container'>
+		<h1>{{ cat }}</h1>
+		<ul>
+			{% for post in category_posts %}
+				<li>
+					<a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}- {{post.post_date}}
+					<br>
+					{{ post.snippet }}...
+				</li>
+			{% endfor %}
+			
+		</ul>
+	</div>
+{% endblock %}

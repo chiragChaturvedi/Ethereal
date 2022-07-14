@@ -6,10 +6,18 @@
 	<div class = 'container'>
 		<h1>{{post.title}}</h1>
 		<p>{{post.body|safe}}</p>
-		<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button></a>
-		{% if user.is_authenticated and user.id == post.author.id %}
-			<a href="{% url 'edit' post.pk %}"><BUTTON class="btn btn-secondary">Edit Post</BUTTON></a>
-			<a href="{% url 'delete' post.pk %}"><BUTTON class="btn btn-danger">Delete Post</BUTTON></a>
+		{% if user.is_authenticated %}
+			<form action="{% url 'like_post' post.pk %}" method="POST">
+				{% csrf_token %}
+				<button type='submit', name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm" >Like</button> {{ total_likes }} likes
+				
+			</form>
+			<br>
+			{% if user.id == post.author.id %}
+				<a href="{% url 'edit' post.pk %}"><BUTTON class="btn btn-secondary">Edit Post</BUTTON></a>
+				<a href="{% url 'delete' post.pk %}"><BUTTON class="btn btn-danger">Delete Post</BUTTON></a>
+			{% endif %}
 		{% endif %}
+		<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button></a>
 	</div>
 {% endblock %}

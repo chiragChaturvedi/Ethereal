@@ -1,6 +1,6 @@
 {% extends 'Base.html' %}
 {% block title %}
-	Blogs
+Blogs
 {% endblock %}
 {% block content %}
 	<div class = 'container'>
@@ -10,14 +10,14 @@
 				<li>
 					<a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}- {{post.post_date}}
 					<!-- {% if user.is_authenticated %}
-							<small>
-							<a href="{% url 'edit' post.pk %}">(Edit)</a>
-							<a href="{% url 'delete' post.pk %}">(delete)</a>
-							</small>
-							
+														<small>
+														<a href="{% url 'edit' post.pk %}">(Edit)</a>
+														<a href="{% url 'delete' post.pk %}">(delete)</a>
+														</small>
+														
 					{% endif %} -->
 					<br>
-					{{post.body|slice:':50'|safe}}...
+					{{ post.snippet }}...
 				</li>
 			{% endfor %}
 			
