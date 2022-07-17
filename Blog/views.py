@@ -26,7 +26,7 @@ class MyPosts(ListView):
 
 class HomeView(ListView):
 	model = Post
-	template_name = 'home.html'
+	template_name = 'blog.html'
 	ordering = ['-post_date']
 
 	def get_context_data(self, *args, **kwargs):
@@ -37,7 +37,7 @@ class HomeView(ListView):
 
 class DetailedView(DetailView):
 	model = Post
-	template_name = 'article.html'
+	template_name = 'article_detail.html'
 
 	def get_context_data(self, *args, **kwargs):
 		cat_menu = category.objects.all()

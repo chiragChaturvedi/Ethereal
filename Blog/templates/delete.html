@@ -1,4 +1,4 @@
-{% extends 'Base.html' %}
+{% extends 'blog_base.html' %}
 {% block title %}
 	Delete
 {% endblock %}
@@ -12,7 +12,7 @@
 					{% csrf_token %}
 					
 					<button type="submit" class="btn btn-danger">Delete</button>
-					<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button>
+					<a href="{% url 'blog' %}"><button type="button" class="btn btn-secondary">Back</button>
 					</div>
 				</div>
 			{% else %}

@@ -1,4 +1,5 @@
-{% extends 'Base.html' %}
+{% extends 'blog_base.html' %}
+
 {% block title %}
 	Blogs
 {% endblock %}
@@ -9,7 +10,7 @@
 			{% for post in object_list %}
 				{% if post.author.id == user.id %}
 					<li>
-						<a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}- {{post.post_date}}
+						<a href="{% url 'article_detail' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}- {{post.post_date}}
 						{% if user.is_authenticated %}
 							<small>
 							<a href="{% url 'edit' post.pk %}">(Edit)</a>
@@ -18,7 +19,7 @@
 							
 						{% endif %}
 						<br>
-						{{post.body|slice:':50'|safe}}...
+						{{post.snippet|safe}}...
 					</li>
 				{% endif %}
 			{% endfor %}

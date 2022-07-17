@@ -1,0 +1,31 @@
+{% extends 'blog_base.html' %}
+{% block title %}
+	Blogs
+{% endblock %}
+{% block nav %}
+	
+	
+	
+{% endblock nav %}
+{% block content %}
+	<div class = 'container'>
+		<h1>Blogs</h1>
+		<ul>
+			{% for post in object_list %}
+				<li>
+					<a href="{% url 'article_detail' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}- {{post.post_date}}
+					<!-- {% if user.is_authenticated %}
+																												<small>
+																												<a href="{% url 'edit' post.pk %}">(Edit)</a>
+																												<a href="{% url 'delete' post.pk %}">(delete)</a>
+																												</small>
+																												
+					{% endif %} -->
+					<br>
+					{{ post.snippet }}...
+				</li>
+			{% endfor %}
+			
+		</ul>
+	</div>
+{% endblock content %}

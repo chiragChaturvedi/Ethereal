@@ -1,4 +1,4 @@
-{% extends 'Base.html' %}
+{% extends 'blog_base.html' %}
 {% block title %}
 	Do it!
 {% endblock %}
@@ -13,7 +13,7 @@
 					{{ form.as_p }}
 					
 					<button class = 'btn btn-secondary' type="submit">Post</button>
-					<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button>
+					<a href="{% url 'blog' %}"><button type="button" class="btn btn-secondary">Back</button>
 					</div>
 				</div>
 				<script>

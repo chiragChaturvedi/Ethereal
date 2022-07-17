@@ -1,4 +1,4 @@
-{% extends 'Base.html' %}
+{% extends 'blog_base.html' %}
 {% block title %}
 	{{post.title}}
 {% endblock %}
@@ -18,6 +18,6 @@
 				<a href="{% url 'delete' post.pk %}"><BUTTON class="btn btn-danger">Delete Post</BUTTON></a>
 			{% endif %}
 		{% endif %}
-		<a href="{% url 'home' %}"><button type="button" class="btn btn-secondary">Back</button></a>
+		<a href="{% url 'blog' %}"><button type="button" class="btn btn-secondary">Back</button></a>
 	</div>
 {% endblock %}

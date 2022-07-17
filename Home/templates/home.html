@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<title>Ethereal</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<!-- <link rel='stylesheet' type='text/css' media='screen' href=''> -->
+		<script src='https://cdn.tailwindcss.com'></script>
+
+	</head>
+	<body>
+		<div class="hidden md:flex">
+			<div class="grid justify-items-center pt-8 h-screen bg-slate-800 w-1/5 ">
+				<div class="h-min grid justify-items-center">
+					<img src="{% static 'images/profile.png' %}" alt="Profile_Pic" class="w-32 h-28 bg-rose-400 rounded-full shadow-2xl">
+					<h1 class="text-3xl text-white text-center font-mono">Kushagra Chaturvedi</h1>
+					<h1 class="text-sm	font-thin text-white text-center">Lets make learning easy!</h1>
+				</div>
+				<div class="grid justify-items-center">
+					<a href="{% url 'blog' %}" class="text-white hover:text-gray-500">Blogs</a>
+					<a href="#" class="text-white hover:text-gray-500">Courses</a>
+					<a href="#" class="text-white hover:text-gray-500">Projects</a>
+					<a href="#" class="text-white hover:text-gray-500">Apps</a>
+					<a href="#" class="text-white hover:text-gray-500">About</a>
+				</div>
+			</div>
+			<div class="container bg-cyan-800 h-screen w-3/5">
+				<div>
+					<img src="{% static 'images/AI.png' %}" class="h-72 w-screen" alt="img">
+				</div>
+				<div class="flex border-4 bg-sky-300 items-center h-96		">
+					
+					<div class="m-12">
+						<img src="{% static 'images/all.png' %}" class="h-64 w-88" alt="logo">
+					</div>
+
+					<div class="m-12">
+						<p>
+							<h1 class="text-4xl font-serif">Hi,<br>I am Kushagra Chaturvedi.</h1><br><p class="text-base text-thin font-mono">A Python Developer and also a Full-Stack Developer and Aspiring future Data Scientist.</p>
+						</p>
+					</div>
+					
+				</div>
+			</div>
+			<div class="container bg-cyan-700 h-screen w-1/5">
+				<h1>container3</h1>
+			</div>
+		</div>
+	</body>
+</html>

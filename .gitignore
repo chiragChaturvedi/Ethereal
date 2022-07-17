@@ -1,4 +1,8 @@
 .sqlite3
 Pipfile
 *.lock
+<<<<<<< HEAD
 ngrok.exe
+=======
+ngrok.exe
+>>>>>>> 2c88c280bb6645cbbf49ffdd17fcf5a2dcfec310

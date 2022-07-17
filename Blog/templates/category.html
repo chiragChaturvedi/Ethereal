@@ -1,4 +1,4 @@
-{% extends 'Base.html' %}
+{% extends 'blog_base.html' %}
 {% block title %}
 	{{ cat }}
 {% endblock %}
@@ -8,7 +8,7 @@
 		<ul>
 			{% for post in category_posts %}
 				<li>
-					<a href="{% url 'article' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}- {{post.post_date}}
+					<a href="{% url 'article_detail' post.pk %}">{{post.title}}</a> - {{post.author.get_full_name}}- {{post.post_date}}
 					<br>
 					{{ post.snippet }}...
 				</li>

@@ -14,10 +14,10 @@ SECRET_KEY = 'django-insecure-5oo5cw1mbaoli$5f72sz#@e5w7oq_!-ap2*ba*m(w^@k2(qozl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['127.0.0.1', '4515-2401-4900-46a8-987b-6d9a-a43c-c81a-694.ngrok.io','https://4515-2401-4900-46a8-987b-6d9a-a43c-c81a-694.ngrok.io']
+# ALLOWED_HOSTS = ['127.0.0.1', 'e77d-2401-4900-5c28-89a3-7982-f96b-6519-de30.ngrok.io', 'https://e77d-2401-4900-5c28-89a3-7982-f96b-6519-de30.ngrok.io']
 ALLOWED_HOSTS = []
 
-# CSRF_TRUSTED_ORIGINS = ['http://4515-2401-4900-46a8-987b-6d9a-a43c-c81a-694.ngrok.io', 'https://4515-2401-4900-46a8-987b-6d9a-a43c-c81a-694.ngrok.io']
+# CSRF_TRUSTED_ORIGINS = ['https://e77d-2401-4900-5c28-89a3-7982-f96b-6519-de30.ngrok.io']
 # Application definition
 
 INSTALLED_APPS = [
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'Blog',
     'Members',
     'ckeditor',
+    'Home',
 ]
 
 MIDDLEWARE = [
@@ -111,8 +112,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'blog/static'),
-    'Members/static',
+    os.path.join(BASE_DIR, 'static')
 ]
 
 # Default primary key field type
@@ -120,5 +120,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'blog'
+LOGOUT_REDIRECT_URL = 'blog'
